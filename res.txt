@@ -1,0 +1,54 @@
+BATTERIA DI TEST:
+1) Creazione dizionario di 4 elementi usando l'espressione apposita:
+i: 45, j: 78, w: 50, z: 120, //.
+2) Creazione dizionario di 4 elementi usando l'operazione primitiva Insert:
+i: 455, j: 788, w: 500, z: 1200, //.
+3) Creazione dizionario di 2 elementi andando a prendere elementi dall'ambiente locale:
+x: 11, y: 22, //.
+4) Creazione dizionario di 3 elementi che sono il risulato di una funzione:
+v1: true, v2: false, v3: true, //.
+
+---> Nei 3 test successivi (5-6-7) utilizzerò il primo dizionario {i: 45, j: 78, w: 50, z: 120, //.}.
+
+5) Cerco la chiave 'z' all'interno del dizionario. Risposta del programma:
+true
+6) Cerco la chiave 'e' all'interno del dizionario. Risposta del programma:
+false
+7) Rimuovo le coppie con chiave 'j' e 'w' dal dizionario:
+i: 45, z: 120, //.
+
+---> Utilizzo il dizionario: {i: 3, j: 5, z: 4, //.}.
+8) Applico la funzione ricorsiva fattoriale a tutti gli elementi del dizionario per mezzo della Iterate:
+i: 6, j: 120, z: 24, //.
+9) Applico, con lo stesso dizionario, l'operazione Fold che ne fa la somma degli elementi.
+Risposta: 12
+
+10) Applicazione sequenziale di un And tramite Fold al dizionario: {i: true, j: false, //.}.
+Risposta: false
+11) Valutazione programma meno semplice che applica il fattoriale con la Iterate e poi fa la somma con Fold degli elementi del dizionario del test 8.
+Risposta: 150
+12) Applico l'operazione Filter al dizionario del test 2 con lista ['z']:
+Dizionario di partenza: {i: 455, j: 788, w: 500, z: 1200, //.}.
+Dizionario filtrato: {z: 1200, //.}.
+13) Svuotamento del dizionario con Filter che riceve lista vuota:
+Dizionario di partenza: {i: 455, j: 788, w: 500, z: 1200, //.}.
+Dizionario filtrato: {//.}.
+
+LANCIO DI ALCUNE ECCEZIONI:
+1) Tento di inserire un 'true' nel dizionario: {i: 3, j: 5, z: 4, //.}.
+Failure("not homogeneous element type")
+2) Tento di inserire un elemento con identificatore vuoto:
+Failure("empty name not accepted")
+3) Tento di creare un dizionario utilizzando l'espressione exp, mettendo tipi di oggetti non omogenei:
+Failure("not homogeneous type in dictionary")
+4) Tento di inserire un elemento con chiave 'i' nel dizionario: {i: 3, j: 5, z: 4, //.}.
+Failure("key already exists")
+5) Tento di cercare un elemento in un'espressione che non è un dizionario:
+Failure("not a dictionary")
+6) Tento di rimuovere l'elemento di chiave 'c' dal dizionario: {i: 3, j: 5, z: 4, //.}.
+Failure("dictionary doesn't contain the key")
+7) Tento di applicare la Fold passando come parametro un'espressione che non è una funzione:
+Failure("not a function")
+8) Tento di applicare la Fold con parametro una funzione binaria booleana And al dizionario: {i: 45, j: 78, //.}.
+Failure("run-time error")
+
